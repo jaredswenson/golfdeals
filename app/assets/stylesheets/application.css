@@ -17,7 +17,7 @@
 body{
  	background: url(golfcourse.jpg);
  	background-size: cover;
- 	font-family: monospace;
+ 	font-family: monospace!important;
  }
 
 header{
@@ -31,17 +31,23 @@ header{
 
  #name{
  	display: inline;
+ 	margin-top: 1;
  }
 
  .homebtns{
 	display: inline;
 	float: right;
+	margin-left: 1%;
 	margin-top: 1%;
  }
 
  .btn{
  	background-color: white;
  	color: black;
+ }
+
+ .btn:hover{
+ 	background-color: blue;
  }
 
 .form{
@@ -80,11 +86,11 @@ input{
 }
 
 a{
-	color: white;
+	color: green!important;
 }
 
 a:hover{
-	color: red;
+	color: white!important;
 }
 
 .dealform{
@@ -95,4 +101,8 @@ a:hover{
 	margin: 0 auto;
 	position: relative;
     top: 60px;
+}
+
+#tease{
+	color: red;
 }
