@@ -1,7 +1,7 @@
 <div class="form">
   <h2>Golf Course Registration</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :multipart => true }) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="field">
@@ -56,6 +56,8 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
+
+    <%= f.file_field :avatar %>
 
     <div class="actions">
       <%= f.submit "Sign up" %>
