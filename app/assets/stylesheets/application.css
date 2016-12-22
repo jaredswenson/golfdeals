@@ -42,9 +42,7 @@ input{
 	color: white;
 	width: 100%;
 	background: none;
-	border: none;
-	border-bottom: 2px solid white;
-}
+	border: none;}
 
 .actions{
 	background-color: black;
@@ -52,6 +50,11 @@ input{
 	width: 25%;
 	margin-left: 35%;
     margin-top: 1%;
+}
+
+.field{
+	border: none;
+	border-bottom: 1px solid white;
 }
 
 .partial{
