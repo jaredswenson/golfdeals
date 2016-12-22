@@ -28,6 +28,15 @@ header{
     top: 0px;
  }
 
+ #name{
+ 	display: inline;
+ }
+
+ .homebtns{
+	display: inline;
+	float: right;
+ }
+
 .form{
 	background-color: rgba(0, 0, 0, 0.7);
 	color: white;
