@@ -17,6 +17,7 @@
 body{
  	background: url(golfcourse.jpg);
  	background-size: cover;
+ 	font-family: monospace;
  }
 
 header{
@@ -84,4 +85,14 @@ a{
 
 a:hover{
 	color: red;
+}
+
+.dealform{
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+    top: 60px;
 }
