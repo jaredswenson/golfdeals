@@ -1,16 +1,14 @@
 <div class="dealform">
 	<% @courses.each do |course| %>
-		
-		<div class="dealfield">
-			<%= image_tag course.avatar.url(:thumb) %>
+		<div class="sepratedeals">
+			<div class="image">
+				<%= image_tag course.avatar.url(:medium) %>
+			</div>
+		    <div class="courseinfo">
+		      <h3><%= course.name %></h3>
+		      <h4><%= course.address + " " + course.city + " " + course.state %></h4>
+		    </div>
+		    <hr>
 		</div>
-	    <div class="dealfield">
-	      <h3><%= course.name %></h3>
-	    </div>
-
-	    <div class="dealfield">
-	      <h4><%= course.address + " " + course.city + " " + course.state %></h4>
-	    </div>
-
   <% end %>
 </div>
