@@ -1,5 +1,6 @@
-        Prefix Verb   URI Pattern                      Controller#Action
-                home_index GET    /home/index(.:format)            home#index
+                    Prefix Verb   URI Pattern                      Controller#Action
+             courses_index GET    /courses/index(.:format)         courses#index
+              courses_show GET    /courses/show(.:format)          courses#show
         new_course_session GET    /courses/sign_in(.:format)       courses/sessions#new
             course_session POST   /courses/sign_in(.:format)       courses/sessions#create
     destroy_course_session DELETE /courses/sign_out(.:format)      courses/sessions#destroy
@@ -30,4 +31,5 @@ cancel_player_registration GET    /players/cancel(.:format)        players/regis
                            PUT    /players(.:format)               players/registrations#update
                            DELETE /players(.:format)               players/registrations#destroy
                            POST   /players(.:format)               players/registrations#create
+                           GET    /                                home#index
                       root GET    /                                home#index
