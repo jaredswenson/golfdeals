@@ -24,7 +24,7 @@ class Courses::SessionsController < Devise::SessionsController
   # end
  
  def after_sign_in_path_for(resource)
-  course_session_path 
+  courses_index_path 
  end
 
 end
