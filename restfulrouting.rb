@@ -1,4 +1,6 @@
                     Prefix Verb   URI Pattern                      Controller#Action
+             players_index GET    /players/index(.:format)         players#index
+              players_show GET    /players/show(.:format)          players#show
              courses_index GET    /courses/index(.:format)         courses#index
               courses_show GET    /courses/show(.:format)          courses#show
         new_course_session GET    /courses/sign_in(.:format)       courses/sessions#new

@@ -22,7 +22,7 @@ class Players::UnlocksController < Devise::UnlocksController
   # end
 
   # The path used after unlocking the resource
-  # def after_unlock_path_for(resource)
-  #   super(resource)
-  # end
+ def after_sign_in_path_for(resource)
+  players_index_path 
+ end
 end
