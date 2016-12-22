@@ -35,6 +35,12 @@ header{
  .homebtns{
 	display: inline;
 	float: right;
+	margin-top: 1%;
+ }
+
+ .btn{
+ 	background-color: white;
+ 	color: black;
  }
 
 .form{
