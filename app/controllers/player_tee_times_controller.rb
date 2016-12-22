@@ -1,0 +1,2 @@
+class PlayerTeeTimesController < ApplicationController
+end
