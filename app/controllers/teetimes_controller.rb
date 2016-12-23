@@ -12,9 +12,7 @@ class TeetimesController < ApplicationController
    def edit
 
    	@teetime = Teetime.find(params[:id])
- 
-    @teetime = current_course.teetimes.update_attributes(teetime_params)
-        redirect_to root_path
+    
    end
 
    def destroy

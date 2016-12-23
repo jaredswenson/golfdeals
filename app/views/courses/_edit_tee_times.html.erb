@@ -1,25 +1,27 @@
-<%= form_for @teetimes, html: {method: :put} do |f| %>
+<div class="form">
+  <%= form_for @teetime, html: {method: :put} do |f| %>
 
-  <div class="field">
-    <%= f.label :starttime, "Date and Tee Time" %><br />
-    <%= f.datetime_select :starttime, {:minute_step => 15, :ampm => true}, autofocus: true %>
-  </div>
+    <div class="field edit">
+      <%= f.label :starttime, "Date and Tee Time" %><br />
+      <%= f.datetime_select :starttime, {:minute_step => 15, :ampm => true}, autofocus: true, class: "select" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :endtime, "Date and Tee Time" %><br />
-    <%= f.datetime_select :endtime, {:minute_step => 60, :ampm => true} %>
-  </div>
+    <div class="field edit">
+      <%= f.label :endtime, "Date and Tee Time" %><br />
+      <%= f.datetime_select :endtime, {:minute_step => 15, :ampm => true}, class: "select" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :cost, "Price" %><br />
-    <%= f.text_field :cost %>
-  </div>
-  
-  <%= f.label :holes, "Select number of holes" %><br />
-  <%= f.select :holes, [9, 18] %>
-  
-  <div class="actions">
-    <%= f.submit "Submit Changes" %>
-  </div>
+    <div class="field edit">
+      <%= f.label :cost, "Price" %><br />
+      <%= f.text_field :cost %>
+    </div>
+    <div class="field edit">
+      <%= f.label :holes, "Select number of holes" %><br />
+      <%= f.select :holes, [9,18], {}, {class: 'select'}  %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit Changes" %>
+    </div>
 
-<% end %>
+  <% end %>
+</div>
