@@ -27,6 +27,7 @@ header{
  	color: white;
  	position: fixed;
     top: 0px;
+    z-index: 1;
  }
 
  #name{

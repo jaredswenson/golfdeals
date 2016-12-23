@@ -9,15 +9,16 @@
     </div>
     <div class="times">
     	<% @times.each do |time| %>
-    		<%= time.starttime %> <br>
-    		<%= time.endtime %> <br>
+    		<%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
+    		<%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
     		$<%= time.cost %>0 <br>
-    		<%= time.holes %> holes
+    		<%= time.holes %> holes <br>
     		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal">
 	 		 Edit Offer
 			</button>
+			<hr>
     	<% end %>
-    </div>
+    </div><br>
     <!-- Button trigger modal -->
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	  Create New Offer
@@ -49,7 +50,7 @@
         <h4 class="modal-title" id="myModalLabel">Edit Offer</h4>
       </div>
       <div class="modal-body">
-        EDIT
+        <%= render "courses/edit_tee_times" %>
       </div>
     </div>
   </div>

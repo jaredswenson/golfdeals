@@ -21,7 +21,23 @@
 							<h4><%= course.phone %></h4>
 						</div>
 						<div class="courseinfo">
-							<h3 id="tease">Log In to see offers!</h3>
+							<% if player_signed_in? %>
+								<% course.teetimes.each do |time| %>
+									Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
+						    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
+						    		$<%= time.cost %>0 <br>
+						    		<%= time.holes %> holes
+						    	<% end %>
+						    <% elsif course_signed_in? %>
+						    	<% course.teetimes.each do |time| %>
+									Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
+						    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
+						    		$<%= time.cost %>0 <br>
+						    		<%= time.holes %> holes
+						    	<% end %>	
+							<% else %>
+								<h3 id="tease">Log In to see offers!</h3>
+							<% end %>
 						</div>
 					</div>
 				</div>

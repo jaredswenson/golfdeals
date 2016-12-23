@@ -2,12 +2,12 @@
 
   <div class="field">
     <%= f.label :starttime, "Date and Tee Time" %><br />
-    <%= f.datetime_select :starttime, autofocus: true %>
+    <%= f.datetime_select :starttime, {:minute_step => 15, :ampm => true}, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :endtime, "Date and Tee Time" %><br />
-    <%= f.datetime_select :endtime %>
+    <%= f.datetime_select :endtime, {:minute_step => 60, :ampm => true} %>
   </div>
 
   <div class="field">
