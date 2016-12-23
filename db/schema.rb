@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223174756) do
+ActiveRecord::Schema.define(version: 20161223222941) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "email"
@@ -74,6 +74,9 @@ ActiveRecord::Schema.define(version: 20161223174756) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "subscription_type"
+    t.string   "payment_method"
+    t.string   "email_opt_in"
     t.index ["email"], name: "index_players_on_email", unique: true
     t.index ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
   end

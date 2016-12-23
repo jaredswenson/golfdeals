@@ -38,6 +38,21 @@
       <%= f.text_field :zip %>
     </div>
 
+    <div class="field select">
+      <%= f.label :subscription_type %><br />
+      <%= f.select :subscription_type, ["Annually", "Monthly"] %>
+    </div>
+
+    <div class="field select">
+      <%= f.label :payment_method %><br />
+      <%= f.select :payment_method, ["Visa", "Discover", "AMEX", "MasterCard"] %>
+    </div>
+
+    <div class="field select">
+      <%= f.label :email_opt_in %><br />
+      <%= f.select :email_opt_in, ["Yes", "No"] %>
+    </div>
+
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
