@@ -87,6 +87,10 @@ input{
     margin-top: 1%;
 }
 
+.select{
+	color: green;
+}
+
 a{
 	color: green!important;
 }
