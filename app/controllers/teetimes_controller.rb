@@ -10,6 +10,9 @@ class TeetimesController < ApplicationController
    end
 
    def edit
+
+   	@teetime = Teetime.find(params[:id])
+ 
     @teetime = current_course.teetimes.update_attributes(teetime_params)
         redirect_to root_path
    end
@@ -20,6 +23,16 @@ class TeetimesController < ApplicationController
 
 	    redirect_to courses_home_path
 	   end
+	end
+
+	def update
+	    @teetime = Teetime.find(params[:id])
+
+	      if @teetime.update(params[:teetime].permit(:cost, :starttime, :endtime, :holes))
+	        redirect_to courses_home_path
+	      else
+	        render 'edit'
+	    end
 	end
 
     private
