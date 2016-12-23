@@ -16,7 +16,8 @@
 
 body{
  	background: url(golfcourse.jpg);
- 	background-size: cover;
+ 	background-size: auto;
+ 	background-repeat: no-repeat;
  	font-family: monospace!important;
  }
 
@@ -84,6 +85,10 @@ input{
 	width: 40%;
 	margin-left: 35%;
     margin-top: 1%;
+}
+
+.select{
+	color: green;
 }
 
 a{

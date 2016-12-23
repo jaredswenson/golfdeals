@@ -13,7 +13,8 @@
     		<%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
     		$<%= time.cost %>0 <br>
     		<%= time.holes %> holes <br>
-    		<%= link_to 'Delete', teetime_path(time), method: :delete %>
+
+    		<%= link_to 'Delete', teetime_path(time), method: :delete, class: "btn" %>
     		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal">
 	 		 Edit Offer
 			</button>
