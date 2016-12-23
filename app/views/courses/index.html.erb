@@ -9,10 +9,13 @@
     </div>
     <div class="times">
     	<% @times.each do |time| %>
-    		<%= time.starttime %>
-    		<%= time.endtime %>
-    		$<%= time.cost %>0
+    		<%= time.starttime %> <br>
+    		<%= time.endtime %> <br>
+    		$<%= time.cost %>0 <br>
     		<%= time.holes %> holes
+    		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editModal">
+	 		 Edit Offer
+			</button>
     	<% end %>
     </div>
     <!-- Button trigger modal -->
@@ -32,6 +35,21 @@
       </div>
       <div class="modal-body">
         <%= render "courses/tee_times_form"%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Offer</h4>
+      </div>
+      <div class="modal-body">
+        EDIT
       </div>
     </div>
   </div>
