@@ -1,8 +1,13 @@
 <%= form_for @teetimes do |f| %>
 
   <div class="field">
-    <%= f.label :time, "Date and Tee Time" %><br />
-    <%= f.text_field :time, autofocus: true %>
+    <%= f.label :starttime, "Date and Tee Time" %><br />
+    <%= f.datetime_select :starttime, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endtime, "Date and Tee Time" %><br />
+    <%= f.datetime_select :endtime %>
   </div>
 
   <div class="field">
@@ -11,7 +16,7 @@
   </div>
   
   <%= f.label :holes, "Select number of holes" %><br />
-  <%= f.text_field :holes %>
+  <%= f.select :holes, [9, 18] %>
   
   <div class="actions">
     <%= f.submit "Create Discount" %>
