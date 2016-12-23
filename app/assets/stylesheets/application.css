@@ -16,7 +16,8 @@
 
 body{
  	background: url(golfcourse.jpg);
- 	background-size: cover;
+ 	background-size: auto;
+ 	background-repeat: no-repeat;
  	font-family: monospace!important;
  }
 
