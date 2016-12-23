@@ -40,12 +40,12 @@ before_action :configure_account_update_params, only: [:update]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :address, :city, :state, :zip, :avatar] )
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :address, :city, :state, :zip, :avatar, :subscription_type, :payment_method, :email_opt_in])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :first_name, :last_name, :address, :city, :state, :zip, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :first_name, :last_name, :address, :city, :state, :zip, :avatar, :subscription_type, :payment_method, :email_opt_in])
   end
 
   # The path used after sign up.
