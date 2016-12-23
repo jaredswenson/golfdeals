@@ -1,8 +1,4 @@
-                    Prefix Verb   URI Pattern                      Controller#Action
-             players_index GET    /players/index(.:format)         players#index
-              players_show GET    /players/show(.:format)          players#show
-             courses_index GET    /courses/index(.:format)         courses#index
-              courses_show GET    /courses/show(.:format)          courses#show
+                   Prefix Verb   URI Pattern                      Controller#Action
         new_course_session GET    /courses/sign_in(.:format)       courses/sessions#new
             course_session POST   /courses/sign_in(.:format)       courses/sessions#create
     destroy_course_session DELETE /courses/sign_out(.:format)      courses/sessions#destroy
@@ -33,5 +29,13 @@ cancel_player_registration GET    /players/cancel(.:format)        players/regis
                            PUT    /players(.:format)               players/registrations#update
                            DELETE /players(.:format)               players/registrations#destroy
                            POST   /players(.:format)               players/registrations#create
-                           GET    /                                home#index
+                  teetimes GET    /teetimes(.:format)              teetimes#index
+                           POST   /teetimes(.:format)              teetimes#create
+               new_teetime GET    /teetimes/new(.:format)          teetimes#new
+              edit_teetime GET    /teetimes/:id/edit(.:format)     teetimes#edit
+                   teetime GET    /teetimes/:id(.:format)          teetimes#show
+                           PATCH  /teetimes/:id(.:format)          teetimes#update
+                           PUT    /teetimes/:id(.:format)          teetimes#update
+                           DELETE /teetimes/:id(.:format)          teetimes#destroy
+              courses_home GET    /home(.:format)                  courses#index
                       root GET    /                                home#index
