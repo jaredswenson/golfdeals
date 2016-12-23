@@ -15,10 +15,8 @@ class TeetimesController < ApplicationController
    end
 
    def destroy
-	    @teetime = Teetimes.find(params[:id])
-
-	    if endtime < time.now
-	    @teetime.destroy
+	    @teetime = Teetime.find(params[:id])
+    	@teetime.destroy
 
 	    redirect_to courses_home_path
 	   end
