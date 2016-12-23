@@ -34,6 +34,7 @@ class TeetimesController < ApplicationController
 	    end
 	end
 
+
     private
 	def teetime_params
 	    params.require(:teetime).permit(:course_id, :cost, :starttime, :endtime, :holes)
