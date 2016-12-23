@@ -19,8 +19,8 @@ class TeetimesController < ApplicationController
     	@teetime.destroy
 
 	    redirect_to courses_home_path
-	   end
 	end
+
 
     private
 	def teetime_params
