@@ -1,13 +1,14 @@
-<div class="dealform">
-	<div class="image">
+<div class="dealform row">
+	<div class="image col-md-4">
 		<%= image_tag @course.avatar.url(:medium) %>
 	</div>
-    <div class="courseinfo">
+    <div class="courseinfo col-md-4">
       <h3><%= @course.name %></h3>
       <h4><%= @course.address + " " + @course.city + " " + @course.state %></h4>
       <h4><%= @course.phone %></h4>
     </div>
-    <div class="times">
+    <div class="times col-md-4">
+    <h3>Upcoming Offers</h3>
     	<% @times.each do |time| %>
     		<%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
     		<%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
@@ -15,8 +16,7 @@
     		<%= time.holes %> holes <br>
 
     		<%= link_to 'Delete', teetime_path(time), method: :delete, class: "btn" %>
-    		<%= link_to 'Edit Offer', edit_teetime_path(time), class: "btn" %>
-			<hr>
+    		<%= link_to 'Edit Offer', edit_teetime_path(time), class: "btn" %> <hr>
     	<% end %>
     </div><br>
     <!-- Button trigger modal -->

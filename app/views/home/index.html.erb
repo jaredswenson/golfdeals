@@ -11,29 +11,30 @@
 		<% @courses.each_with_index do |course, index| %>
 			<div class="item <%= index == 0 ? 'active' : '' %>">
 				<div class="dealform">
-					<div class="sepratedeals">
-						<div class="image">
+					<div class="sepratedeals row">
+						<div class="image col-md-4">
 							<%= image_tag course.avatar.url(:medium) %>
 						</div>
-						<div class="courseinfo">
+						<div class="courseinfo col-md-4">
 							<h3><%= course.name %></h3>
 							<h4><%= course.address + " " + course.city + " " + course.state %></h4>
 							<h4><%= course.phone %></h4>
 						</div>
-						<div class="courseinfo">
+						<div class="times col-md-4">
+						<h3>Offers</h3>
 							<% if player_signed_in? %>
 								<% course.teetimes.each do |time| %>
 									Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
 						    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
 						    		$<%= time.cost %>0 <br>
-						    		<%= time.holes %> holes
+						    		<%= time.holes %> holes <hr>
 						    	<% end %>
 						    <% elsif course_signed_in? %>
 						    	<% course.teetimes.each do |time| %>
 									Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
 						    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
 						    		$<%= time.cost %>0 <br>
-						    		<%= time.holes %> holes
+						    		<%= time.holes %> holes <hr>
 						    	<% end %>	
 							<% else %>
 								<h3 id="tease">Log In to see offers!</h3>
