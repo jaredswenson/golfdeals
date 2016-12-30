@@ -55,3 +55,27 @@
 	<span class="sr-only">Next</span>
 	</a>
 </div>
+
+<div align="center" class="alloffers">
+<h1>ALL OFFERS</h1>
+	<% @courses.each do |course| %>
+		<% if player_signed_in? %>
+			<h1><%= course.name %></h1>
+			<% course.teetimes.each do |time| %>
+				Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
+	    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
+	    		$<%= time.cost %>0 <br>
+	    		<%= time.holes %> holes <hr>
+	    	<% end %>
+	    <% elsif course_signed_in? %>
+	    	<% course.teetimes.each do |time| %>
+				Valid Starting: <%= time.starttime.strftime("%b %d %Y %I:%M %p") %> <br>
+	    		Expires: <%= time.endtime.strftime("%b %d %Y %I:%M %p") %> <br>
+	    		$<%= time.cost %>0 <br>
+	    		<%= time.holes %> holes <hr>
+	    	<% end %>	
+		<% else %>
+			<h3 id="tease">Create an Account for just $5 a month or Login to see exclusive discount!</h3>
+		<% end %>
+	<% end %>
+</div>
