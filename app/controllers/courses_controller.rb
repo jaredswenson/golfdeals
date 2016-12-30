@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   	if course_signed_in?
   		@course = current_course
   		@teetimes = Teetime.new
-  		@times = Teetime.all
+  		@times = @course.teetimes
   	end
   end
 
