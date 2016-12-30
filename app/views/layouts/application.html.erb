@@ -14,28 +14,38 @@
    <header>
     <a href="/"><h1 id="name" >Daily Golf Deals</h1></a>
     <div class="homebtns">
-      <% if course_signed_in? %>
-      <%= link_to "Offer Page", "#{request.base_url}/", :class => "btn" %>
-      <%= link_to "Course Profile", "#{request.base_url}/course/home", :class => "btn" %>
-      <%= link_to "Edit Course",  edit_course_registration_path, :class => "btn"  %>
-      <%= link_to "Sign Out",  destroy_course_session_path, method: :delete, :class => "btn" %>
-      <% elsif player_signed_in? %>
-      <%= link_to "Offer Page", "#{request.base_url}/", :class => "btn" %>
-      <%= link_to "Player Profile", "#{request.base_url}/player/home", :class => "btn" %>
-      <%= link_to "Edit Player",  edit_player_registration_path, :class => "btn"  %>
-      <%= link_to "Sign Out",  destroy_player_session_path, method: :delete, :class => "btn" %>
-      <% else %>  
-      <%= link_to "Create Golf Course Account", "#{request.base_url}/courses/sign_up", :class => "btn" %>
-      <%= link_to "Golf Course Login", "#{request.base_url}/courses/sign_in", :class => "btn" %> |
-      <%= link_to "Create Player Account", "#{request.base_url}/players/sign_up", :class => "btn" %>
-      <%= link_to "Player Login", "#{request.base_url}/players/sign_in", :class => "btn" %>
-      <% end %>
+      <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <% if course_signed_in? %>
+          <%= link_to "Offer Page", "#{request.base_url}/", :class => "btn" %>
+          <%= link_to "Course Profile", "#{request.base_url}/course/home", :class => "btn" %>
+          <%= link_to "Edit Course",  edit_course_registration_path, :class => "btn"  %>
+          <%= link_to "Sign Out",  destroy_course_session_path, method: :delete, :class => "btn" %>
+          <% elsif player_signed_in? %>
+          <%= link_to "Offer Page", "#{request.base_url}/", :class => "btn" %>
+          <%= link_to "Player Profile", "#{request.base_url}/player/home", :class => "btn" %>
+          <%= link_to "Edit Player",  edit_player_registration_path, :class => "btn"  %>
+          <%= link_to "Sign Out",  destroy_player_session_path, method: :delete, :class => "btn" %>
+          <% else %>  
+          <%= link_to "Create Golf Course Account", "#{request.base_url}/courses/sign_up", :class => "btn" %>
+          <%= link_to "Golf Course Login", "#{request.base_url}/courses/sign_in", :class => "btn" %> |
+          <%= link_to "Create Player Account", "#{request.base_url}/players/sign_up", :class => "btn" %>
+          <%= link_to "Player Login", "#{request.base_url}/players/sign_in", :class => "btn" %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </header>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <footer>
+      <h3>Place ad here</h3>
+    </footer>
   </body>
 </html>
-
 
