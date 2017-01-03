@@ -15,12 +15,12 @@
     		$<%= time.cost %>0 <br>
     		<%= time.holes %> holes <br>
 
-    		<%= link_to 'Delete', teetime_path(time), method: :delete, class: "btn" %>
-    		<%= link_to 'Edit Offer', edit_teetime_path(time), class: "btn" %> <hr>
+    		<%= link_to 'Delete', teetime_path(time), method: :delete, class: "offerbtn" %>
+    		<%= link_to 'Edit Offer', edit_teetime_path(time), class: "offerbtn" %> <hr>
     	<% end %>
     </div><br>
     <!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+	<button type="button" class="offerbtn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 	  Create New Offer
 	</button>
 </div>
