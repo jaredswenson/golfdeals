@@ -1,4 +1,8 @@
-class TeetimesController < ApplicationController
+vclass TeetimesController < ApplicationController
+
+   def index
+    @teetime = Teetime.where('endtime >= ?', Date.today).page(params[:page]).per().order(created_at: :desc)
+   end 
 
    def create
     @teetime = current_course.teetimes.new(teetime_params)
@@ -10,9 +14,7 @@ class TeetimesController < ApplicationController
    end
 
    def edit
-
    	@teetime = Teetime.find(params[:id])
-    
    end
 
    def destroy
@@ -25,13 +27,12 @@ class TeetimesController < ApplicationController
 	def update
 	    @teetime = Teetime.find(params[:id])
 
-	      if @teetime.update(params[:teetime].permit(:cost, :starttime, :endtime, :holes))
-	        redirect_to courses_home_path
-	      else
+	      if @teetime.update(teetime_params)
+          redirect_to courses_home_path
+        else
 	        render 'edit'
 	    end
 	end
-
 
     private
 	def teetime_params
