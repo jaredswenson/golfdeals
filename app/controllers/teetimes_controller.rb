@@ -1,4 +1,4 @@
-vclass TeetimesController < ApplicationController
+class TeetimesController < ApplicationController
 
    def index
     @teetime = Teetime.where('endtime >= ?', Date.today).page(params[:page]).per().order(created_at: :desc)
